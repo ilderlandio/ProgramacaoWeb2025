@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Escopos de variáveis - Exemplos </title>
+</head>
+<body>
+    <script>
+        // Tipo VAR - Escopo global e de função 
+        // Exemplos
+        var saldo = 15; // Global
+
+        function AlterarSaldo(desconto){
+           saldo = saldo - desconto; // acessando e alterando saldo 
+           console.log(saldo); 
+           var localDependentes = 8; // Escopo local da função
+        }
+        console.log(AlterarSaldo(3)); // Output: 12
+
+        if(true){
+            saldo = saldo - 5; // Saldo agora é 12, menos 5 = 7 
+            console.log("Acessando variável global de um IF:"+saldo); // Output: 7
+            var beneficio = 20; // Nova variável global
+            //console.log(`Tentativa de acesso a variável Local da Função:${localDependentes}`); 
+        }
+
+        // Bloco simples
+        {
+          saldo = saldo + 3; // 10 
+          console.log(`Acesso de um bloco simples:${saldo}`); // Output: 10 - Usando sintaxe do template string JS
+          console.log(`Variável global beneficio:${beneficio + saldo}`); // acesso ok! 
+        //console.log(`Tentativa de acesso a variável Local da Função:${localDependentes}`); 
+        }
+        //console.log(`Tentativa de acesso a variável Local da Função:${localDependentes}`); 
+       
+        // Tipo LET e CONST - Escopo Global, Local de Função e Local de Bloco
+        // Exemplos
+
+        let valorProduto = 150; // Variável Global
+        const frete = 15; // Constante Global
+
+        function AddDesconto(desconto){
+            let valorFinal = valorProduto - desconto; // Acesso ok, valorProduto é global, mas a variável valorFinal? 
+            return valorFinal;
+        }
+
+        console.log(AddDesconto(7.5)); 
+
+        if(true){
+          //  console.log(`Tentativa de acesso:${valorFinal}`); 
+           let valorparcial = AddDesconto(7.5); 
+           let valorFinalComFrete = valorparcial + frete; 
+           console.log(`Acesso:${valorFinalComFrete}`); 
+        }
+       // console.log(`Tentativa de acesso:${valorFinalComFrete}`); 
+
+       { // Bloco simples
+        const cupom = 5; 
+       }
+       let valorFinalCupom = valorFinalComFrete + cupom; 
+       console.log(valorFinalCupom); 
+
+       // Como resolver os problemas de acesso/escopo? 
+
+      // O problema da redefinição do tipo var
+    //    var valorFinal02 = 15; 
+    //    var valorFinal02 = 19; 
+
+    //    let valorComfrete = 23; 
+    //    let valorComfrete = 24; 
+    </script>
+</body>
+</html>
