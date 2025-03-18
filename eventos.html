@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        #recebeTexto,#texto{
+            height: 30px;
+            width: 25vw;
+            border: solid 1px blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <label for="texto"> Digite um texto </label>
+    <!-- <input type="text" id="texto" onchange="passaTexto()"> -->
+    <input type="text" id="texto" oninput="passaTexto()">
+    <p> Senha: <input type="password" id="senha"> </p>
+    </form>
+    <br>
+    <label for="recebeTexto"> Recebe o texto </label>
+    <div id="recebeTexto"> </div>
+    <script>
+        function passaTexto() {
+            let textoOrigem = document.getElementById("texto").value; 
+            document.getElementById("recebeTexto").innerHTML = textoOrigem;
+        }
+        function identKeyPress(event){
+            if(event.keyCode === 13){
+                document.getElementById("senha").focus();
+            }
+        }
+        function exibirMensagem(){
+            alert("Passou 2 segundos!"); 
+        }
+        // addEventListener -> monitora ocorrência de eventos 
+        document.addEventListener('keydown',identKeyPress);
+        
+        setTimeout(exibirMensagem, 2000);
+    </script>
+    
+</body>
+</html>

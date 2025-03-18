@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificar Tecla Específica</title>
+</head>
+<body>
+
+  <script>
+    // Função para lidar com o evento de teclado
+    function handleKeyPress(event) {
+      // Verifica se a tecla pressionada é a tecla "Enter"
+      if (event.keyCode === 13) {
+        alert('Tecla Enter pressionada!');
+        // Adicione aqui o código que deseja executar ao pressionar a tecla Enter
+      }
+    }
+
+    // Adiciona um ouvinte de eventos para o evento 'keydown' no documento
+    document.addEventListener('keydown', handleKeyPress);
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo de Evento Scroll</title>
+  <style>
+    body {
+      height: 2000px; /* Adicionando altura suficiente para rolar a página */
+    }
+    #scrollInfo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scrollInfo">Rolagem: 0</div>
+
+  <script>
+    // Seleciona o elemento que exibirá as informações de rolagem
+    var scrollInfo = document.getElementById('scrollInfo');
+
+    // Função para lidar com o evento de rolagem
+    function handleScroll() {
+      // Obtém a posição atual de rolagem da página
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      // Atualiza o conteúdo do elemento com a posição de rolagem
+      scrollInfo.textContent = 'Rolagem: ' + scrollTop + 'px';
+    }
+
+    // Adiciona um ouvinte de eventos para o evento 'scroll' no objeto window
+    window.addEventListener('scroll', handleScroll);
+  </script>
+
+  <script>
+    // Função a ser executada após o intervalo de tempo
+    function exibirMensagem() {
+      alert('Olá, esta é uma mensagem após 2000 milissegundos (2 segundos).');
+    }
+
+    // Agendando a execução da função após 2000 milissegundos (2 segundos)
+    setTimeout(exibirMensagem, 2000);
+  </script>
+
+   <script>
+    // Variável para contar o número de vezes que a função é executada
+    var contador = 0;
+
+    // Função a ser executada a cada 1000 milissegundos (1 segundo)
+    function exibirContador() {
+      contador++;
+      console.log('Contador:', contador);
+
+      // Condição para parar o setInterval após 5 execuções
+      if (contador === 5) {
+        clearInterval(intervalId);
+        console.log('Intervalo parado após 5 execuções.');
+      }
+    }
+
+    // Agendando a execução da função a cada 1000 milissegundos (1 segundo)
+    var intervalId = setInterval(exibirContador, 1000);
+</script>
+    <!-- 
+Eventos de Mouse:
+
+click: Ocorre quando o usuário clica em um elemento.
+mousedown: Disparado quando o botão do mouse é pressionado sobre um elemento.
+mouseup: Acionado quando o botão do mouse é liberado após ser pressionado.
+mousemove: Ocorre quando o cursor do mouse se move sobre um elemento.
+Eventos de Teclado:
+
+keydown: Acionado quando uma tecla do teclado é pressionada.
+keyup: Disparado quando uma tecla do teclado é liberada após ser pressionada.
+Eventos de Formulário:
+
+submit: Ocorre quando um formulário é enviado.
+input: Acionado quando o valor de um campo de formulário é alterado.
+change: Disparado quando o valor de um campo de formulário é alterado e o foco é perdido.
+Eventos de Janela e Documento:
+
+load: Ocorre quando a página é completamente carregada.
+unload: Acionado quando a página está prestes a ser descarregada.
+resize: Disparado quando a janela do navegador é redimensionada.
+scroll: Ocorre quando o usuário rola a página.
+Eventos de Tempo:
+
+setTimeout: Utilizado para agendar a execução de uma função após um intervalo de tempo.
+setInterval: Similar ao setTimeout, mas executa repetidamente a função em intervalos regulares.
+Eventos de Toque (em dispositivos móveis):
+
+touchstart: Ocorre quando um dedo toca a tela.
+touchmove: Disparado quando um dedo é movido sobre a tela.
+touchend: Ocorre quando um dedo é retirado da tela.
+
+  -->
+
+</body>
+</html>
+

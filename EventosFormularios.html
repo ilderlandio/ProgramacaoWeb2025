@@ -1,0 +1,124 @@
+<!-- 1. Evento submit
+Acionado quando o formulário é enviado. -->
+
+
+<form id="meuFormulario">
+  <input type="text" name="nome" required>
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+document.getElementById("meuFormulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+    alert("Formulário enviado!");
+});
+</script>
+
+<!-- 2. Evento change
+Acionado quando o valor de um campo muda (como um <select> ou <input> de tipo diferente de texto). -->
+
+<select id="meuSelect">
+  <option value="op1">Opção 1</option>
+  <option value="op2">Opção 2</option>
+</select>
+
+<script>
+document.getElementById("meuSelect").addEventListener("change", function() {
+    alert("Você selecionou: " + this.value);
+});
+</script>
+
+<!-- 3. Evento input
+Disparado sempre que o valor de um campo de entrada muda. -->
+
+
+<input type="text" id="meuInput" placeholder="Digite algo">
+
+<script>
+document.getElementById("meuInput").addEventListener("input", function() {
+    console.log("Valor atual: " + this.value);
+});
+</script>
+
+<!-- <input type="text" oninput="console.log('Valor atual: ' + this.value)" placeholder="Digite algo"> -->
+
+
+<!-- 4. Evento focus
+Disparado quando um campo recebe foco. -->
+
+<input type="text" id="campoFoco" placeholder="Clique aqui">
+
+<script>
+document.getElementById("campoFoco").addEventListener("focus", function() {
+    this.style.backgroundColor = "yellow";
+});
+</script>
+<!-- 
+5. Evento blur
+Disparado quando um campo perde o foco. -->
+
+
+<input type="text" id="campoBlur" placeholder="Digite algo e saia">
+
+<script>
+document.getElementById("campoBlur").addEventListener("blur", function() {
+    alert("Você saiu do campo!");
+});
+</script>
+
+<!-- 6. Evento keydown
+Disparado quando uma tecla é pressionada. -->
+
+<input type="text" id="campoTecla" placeholder="Pressione uma tecla">
+
+<script>
+document.getElementById("campoTecla").addEventListener("keydown", function(event) {
+    console.log("Tecla pressionada: " + event.key);
+});
+</script>
+
+<!-- 7. Evento keyup
+Disparado quando uma tecla é solta. -->
+
+
+<input type="text" id="campoSoltaTecla" placeholder="Solte uma tecla">
+
+<script>
+document.getElementById("campoSoltaTecla").addEventListener("keyup", function(event) {
+    console.log("Tecla solta: " + event.key);
+});
+</script>
+
+<!-- 8. Evento click
+Disparado quando um botão é clicado. -->
+
+
+<button id="botao">Clique em mim</button>
+
+<script>
+document.getElementById("botao").addEventListener("click", function() {
+    alert("Botão clicado!");
+});
+</script>
+<!-- 9. Evento dblclick
+Disparado quando um botão é clicado duas vezes. -->
+
+
+<button id="botaoDuplo">Clique duas vezes</button>
+
+<script>
+document.getElementById("botaoDuplo").addEventListener("dblclick", function() {
+    alert("Duplo clique detectado!");
+});
+</script>
+
+<!-- 10. Evento paste
+Disparado quando algo é colado em um campo. -->
+
+<input type="text" id="campoColar" placeholder="Cole algo aqui">
+
+<script>
+document.getElementById("campoColar").addEventListener("paste", function() {
+    alert("Texto colado!");
+});
+</script>
