@@ -55,3 +55,10 @@ function validaForm(){
 document.getElementById("meuSelect").addEventListener("change", function() {
     alert("Você selecionou: " + this.value);
 });
+
+function passaTexto(){
+    let textoOrigem = document.getElementById("texto").value; 
+    document.getElementById("recebeTexto").innerText = textoOrigem;
+}
+
+document.getElementById("texto").addEventListener("input",passaTexto);
