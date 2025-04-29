@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // -------------------- Pegar os nomes das chaves/atributos de objetos, tranformando em array/vetor
+        const frutas = {
+            banana: 5,
+            maçã: 10,
+            laranja: 8
+        };
+
+        const chaves = Object.keys(frutas);
+
+    console.log(chaves);  // Resultado: ["banana", "maçã", "laranja"]
+
+    // ------------------- Objetos como parâmetros
+
+    function mostrarEstoque(produtoA, produtoB) {
+        console.log("Produto A:", produtoA.nome, "-", produtoA.quantidade);
+        console.log("Produto B:", produtoB.nome, "-", produtoB.quantidade);
+    }
+
+    const celular = { nome: "Celular", quantidade: 150 };
+    const tablet = { nome: "Tablet", quantidade: 32 };
+
+    mostrarEstoque(celular, tablet);
+
+    // ------------------- Formas de acessar e atribuir valores em atributos
+
+    // Forma 1: acesso direto
+    const aluno = { nome: "Ana", nota: 8 };
+
+    // Lendo
+    console.log(aluno.nome); 
+
+    // Modificando
+    aluno.nota = 9;
+    console.log(aluno.nota);
+
+    // Forma 2: usando colchetes
+    const atributo = "nome";
+
+    console.log(aluno[atributo]); // mesmo que aluno.nome
+    aluno["nota"] = 10;
+    console.log(aluno["nota"]);
+
+    // -------------------Entender como produtos.length ajuda a controlar um for
+
+    const estoque = {
+    celular: 150,
+    tablet: 32,
+    fone: 55
+    };
+
+    const produtos = Object.keys(estoque);
+
+    for (let i = 0; i < produtos.length; i++) {
+        const produto = produtos[i];
+        console.log(produto, ":", estoque[produto]);
+    }
+
+    // Exemplo de objeto com atributos que são arrays (vetores)
+    const aluno = {
+        nome: "Carlos",
+        materias: ["Matemática", "Física", "Química"],
+        notas: [7.5, 8.0, 6.5]
+    };
+
+    // Acessando o vetor 'materias' e imprimindo o primeiro valor
+    console.log(aluno.materias[0]);  // Resultado: "Matemática"
+
+    // Acessando o vetor 'notas' e imprimindo a segunda nota
+    console.log(aluno.notas[1]);  // Resultado: 8.0
+
+    // -------------------- Objetos com funções/métodos
+
+    // Exemplo de objeto com atributos que são funções (métodos)
+    const carro = {
+        modelo: "Fusca",
+        cor: "Azul",
+        ano: 1975,
+        exibirInfo: function() {
+            return `O carro é um ${this.modelo} de cor ${this.cor}, fabricado em ${this.ano}.`;
+        },
+        aumentarAno: function() {
+            this.ano++;
+        }
+    };
+
+    // Acessando e executando a função 'exibirInfo'
+    console.log(carro.exibirInfo());  // Resultado: "O carro é um Fusca de cor Azul, fabricado em 1975."
+
+    // Alterando o ano com a função 'aumentarAno' e exibindo novamente
+    carro.aumentarAno();
+    console.log(carro.exibirInfo());  // Resultado: "O carro é um Fusca de cor Azul, fabricado em 1976."
+
+
+
+   
+    </script>
+</body>
+</html>
