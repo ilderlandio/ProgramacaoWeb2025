@@ -1,0 +1,95 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px green; /* Temporário */
+}
+header .logo,.receita{
+    width: 30vw;
+    border: solid 1px red; /* Temporário */
+}
+ header .logo img{
+    margin-top: 5px;
+    max-width:70%;
+    height:auto;
+} 
+
+header .logo{
+    text-align: center;
+} 
+
+header .receita{  
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#receita{
+    width: 100%;
+    height: 2.3rem;
+    background-color:   #00cec9;
+    border: solid  1px #00cec9;
+    cursor: pointer;
+}
+#receita .fa-plus{
+    background-color: aquamarine;
+    font-size: x-large;
+    padding: 4px;
+    border-radius: 10px;
+    
+}
+
+hr{
+    width: 100%;
+    border: 1px solid #636e72;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+#mais{
+    width: 80%;
+    height: 2.3rem;
+    background-color:   #00cec9;
+    border: solid  1px #00cec9;
+    cursor: pointer;
+    border-radius: 15px;
+}
+#mais .fa-plus{
+      background-color: aquamarine;
+    font-size: x-large;
+    padding: 4px;
+    border-radius: 10px;
+}
+.container{
+    text-align: center;
+}
+footer{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+ border: solid 1px red; /* Temporário */
+
+  position: absolute;
+  bottom: 2px;
+}
+footer div {
+    width: 32vw;
+    height: 10vh;
+    border: solid 1px blue; /* Temporário */
+}
